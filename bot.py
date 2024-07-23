@@ -3,9 +3,9 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 
 # 챗GPT API 키
-GPT_API_KEY = 'your_openai_api_key'
+GPT_API_KEY=${{ secrets.GPT_API_KEY }}
 # 텔레그램 봇 토큰
-TELEGRAM_TOKEN = 'your_telegram_bot_token'
+TELEGRAM_TOKEN=${{ secrets.TELEGRAM_TOKEN }}
 
 async def get_gpt_response(prompt, api_key):
     print("Requesting GPT-4 API...")  # 디버깅용 로그 출력
@@ -28,7 +28,7 @@ async def get_gpt_response(prompt, api_key):
         return "Sorry, I couldn't process your request. Please try again later."
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text('안녕하세요! 무엇을 도와드릴까요?')
+    await update.message.reply_text('Hello, Gunner😀 뭘 도와줄까?')
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_message = update.message.text
