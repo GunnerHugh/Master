@@ -18,7 +18,7 @@ jobs:
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: "glacial-shore-34113"
-          heroku_email: "ghyuk.ko@gmail.com"
+          heroku_email: "your_email@example.com"
 
       - name: Deploy to Heroku
         run: git push heroku main
